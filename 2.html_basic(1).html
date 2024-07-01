@@ -1,0 +1,100 @@
+<!-- shift + ! + tab : 자동완성 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body style="background-color: red;"> -->
+<!-- <body background="images/maxresdefault.jpg"> -->
+<body>
+    <!-- style : css 문법-->
+    <h2>글자 styling 예제</h2>
+    <!-- 인라인 스타일링 -->
+    <p style="background-color: red;">1. 배경색 변경</p>
+    <p style="color: blue;">2. 글자색 변경</p>
+    <p style="font-size: 20px;">3. 글자크기 변경</p>
+    <p style="background-color: blue; font-size : 25px; text-align: center;">4. 복합 스타일링</p>
+
+    <h2> link와 이미지 삽입 </h2>
+    <!-- _blank : 새 탭으로 이동 -->
+    <div><a href ="https://naver.com", target = "_blank"> 네이버</a></div>
+
+
+    <!-- 이미지 삽입 -->
+    <div>
+        <a href ="https://naver.com", target = "_blank"> 
+            <!-- alt : 이미지가 깨졌을 때 대체문자열, 시각장애인 용 reader기에서 인식 -->
+            <img src="https://pbs.twimg.com/media/EW3sJHUWoAAuR4N?format=png&name=small" width="320px" height="200px" style="border : 3px solid black;" alt="탁호야끼"> 
+        </a>
+    </div>
+
+    <h2>리스트(ol-순서가 있는, ul-순서가 없는)</h2>
+    <ol style="list-style-type: upper-roman;">
+        <li>아이템A</li>
+        <li>아이템B</li>
+        <li>아이템C</li>
+    </ol>
+
+    <ul style="list-style-type: square;">
+        <li>아이템A</li>
+        <li>아이템B</li>
+        <li>아이템C</li>
+    </ul>
+
+    <h2>테이블 예제</h2>
+    <table border="1" style="border-collapse : collapse">
+        <caption>테이블명</caption>
+        <thead>
+            <tr>
+                <td>컬럼1</td>
+                <td>컬럼2</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용1</td>
+                <td>내용2</td>
+            </tr>
+            <tr>
+                <td>내용A</td>
+                <td>내용B</td>
+            </tr>
+    </tbody>
+    </table>
+
+    <!-- 테이블 만들기 실습 -->
+    <!-- 테이블명은 post : id, title, contents, author_email
+        요소와 데이터를 가진 테이블 생성 -->
+    <h2>테이블 만들기 실습</h2>
+    <table border="1" style="border-collapse : collapse">
+        <caption>post</caption>
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>title</td>
+                <td>contents</td>
+                <td>author_email</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>안뇽하세요</td>
+                <td>안냥</td>
+                <td>abc@naver.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>어쩌라구요</td>
+                <td>밥주세요</td>
+                <td>bbb@naver.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+</body>
+</html>

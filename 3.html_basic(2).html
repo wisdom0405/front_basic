@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>회원가입 form 예제</h2>
+    <!-- 제출할 서버의 url 주소를 action 입력-->
+    <!-- post요청 : 프론트가 백엔드(서버)에 주는 것 -->
+    <!-- get요청 : 프론트가 서버에게 데이터 요청 -->
+    <!-- 기본(text만) 인코딩 형식 : application/x-www-form-urlencoded -->
+    <!-- form에 파일까지 포함하는 경우에 multipart/form-data 사용 -->
+    <form action="https://naver.com" method="post" enctype="multipart/form-data ">
+        <div>
+            <!-- label의 for는 input의 id를 찾아 매핑 -->
+            <label for = "userName">이름</label>
+            <!-- input의 name 속성은 필수이고, 
+                이 속성은 form 데이터가 서버로 전송될 때 각 데이터의 항목을 식별하는데 사용한다.-->
+            <!-- size : 칸의 크기, maxlength : 입력할 수 있는 최대 글자-->
+            <input type = "text" id = "userName" name = "name" size = "5" maxlength = "10">
+        </div>
+        <div>
+            <!-- type : "email" 지원 (이메일 형식에 맞는 input)-->
+            <label for = "email">이메일</label>
+            <input type = "email" id = "email" name = "email" size = "10" maxlength = "20">
+        </div>
+        <div>
+            <!-- readonly는 수정은 못하지만 서버로 전송. disable 수정못하고, 서버로 전송X -->
+            <label for = "address">주소</label>
+            <input type = "text" id = "address" name = "address" size = "20" maxlength = "20" value="서울시 신대방동" readonly>
+        </div>
+        <div>
+            <label for = "password">비밀번호</label>
+            <input type = "password" id = "password" name = "password" size = "20" maxlength = "20">
+        </div>
+        <div>
+            <!-- radio -->
+            <label for="gender">성별</label>
+            <input type="radio" name="gender" id="gender" value="male"> 남성
+            <input type="radio" name="gender" id="gender" value="female" checked> 여성 
+        </div>
+
+        <div>
+            <!-- checkbox -->
+            <label for="interest">관심분야 선택</label>
+            <input type="checkbox" name="interest" id="interest" value="sports"> 스포츠
+            <input type="checkbox" name="interest" id="interest" value="music"> 음악
+            <input type="checkbox" name="interest" id="interest" value="reading"> 독서
+        </div>
+
+        <div>
+            <!-- datetime-local -->
+            <label for="birthday">생년월일</label>
+            <input type="datetime-local" id="birthday" name="birthday">
+        </div>
+
+        <div>
+            <!-- number -->
+            <label for="age">나이</label>
+            <input type="number" name="age">
+        </div>
+
+        <div>
+            <!--select box-->
+            <label>유저선택</label>
+            <select name="userinfo">
+                <option value="admin">관리자</option>
+                <option value="user">일반유저</option>
+                <option value="guest">방문자</option>
+            </select>
+        </div>
+
+        <div>
+            <!-- color -->
+            <label for="color">좋아하는 색상</label>
+            <input type="color" name="color">
+        </div>
+
+        <div>
+            <!-- 파일 업로드 -->
+            <label for="image">증명사진 업로드</label>
+            <input type="file" id="image" name="image" accept="image/*">
+        </div>
+
+        <div>
+            <!-- textarea-->
+            <label for="resume"> 자기소개 </label> <br>
+            <textarea name="resume" id="resume" rows="5" cols="30" placeholder="자기소개를 여기에 써주세요."></textarea>
+        </div>
+
+        <div>
+
+        </div>
+
+
+        <div>
+            <input type = "submit" value="회원가입 완료">
+        </div>
+    </form>
+</body>
+</html>
