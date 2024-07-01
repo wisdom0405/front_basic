@@ -21,8 +21,23 @@
         #id1{
             color: red; text-align: center;
         }
+        #external{
+            color: red;
+        }
+
+        /* 자손 선택자 : 자손모두에게 영향 */
+        div > p{
+        color : yellow;
+        }
+        
     </style>
     <link rel="stylesheet" href="css/mystyle.css">
+    <script>
+        document.getElementById("load2").innerTHML="change1"
+        function updateDemo1(){
+            document.getElementById("demo1").innerTHML="변경되었습니다."
+        }
+    </script>
 
 </head>
 <body>
@@ -40,5 +55,41 @@
 
     <!-- 외부 스타일 적용 -->
     <h3 id="external">외부 스타일 적용</h3>
+
+    <!-- 자손 선택자 : 자손모두에게 영향 -->
+
+    <div>
+        <h2>자손선택자 예시</h2>
+        <p>첫번째 단락</p>
+        <section><p>두번째 단락</p></section>
+    </div>
+
+    <!-- 자식 선택자 : 직계자식에게만 영향 -->
+    <div>
+        <h2>자식선택자 예시</h2>
+        <h5>첫번째 단락</h5>
+        <section><h5>두번째 단락</h5></section>
+    </div>
+
+    <h2>javascript 예시</h2>
+    <p id="load1">js 로드순서 1</p>
+    <p id="load2">js 로드순서 2</p>
+
+    <p id="demo1">변경될 내용1</p>
+    <button onclick="updateDemo1()">내용변경 1</button>
+
+    <p id="demo2">변경될 내용2</p>
+    <button onclick="updateDemo2()">내용변경 2</button>
+
+    <p id="demo3"> 변경될 내용</p>
+    <script src="js/myjs.js"></script>
+
+    <script>
+        document.getElementById("load2").innerTHML="change2"
+        function updateDemo2(){
+            document.getElementById("demo2").innerTHML="변경되었습니다."
+        }
+    </script>
+    
 </body>
 </html>
