@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html css js 통합 기본</title>
+    <style>
+        /* 태그 < 클래스 < id < 내,외부 스타일 < 인라인 */
+        /* 태그선택 */
+        p{
+            color : grey; text-decoration: underline;   
+        }
+
+        /* 클래스 선택 */
+        .c1{
+            color : blue;
+        }
+
+        /* ID 선택*/
+        #id1{
+            color: red; text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="css/mystyle.css">
+
+</head>
+<body>
+    <!-- CSS 스타일 적용방법 3가지 -->
+    <!-- 인라인 스타일 -->
+    <p style="color:green; text-align: center; text-decoration: underline;">인라인 스타일 적용</p>
+
+    <!-- 내부 스타일 적용 : 태그 선택자, 클래스 선택자(멀티태그에 적용가능), id(유일)선택자 -->
+    <p>태그 선택자 적용</p>
+
+    <p class="c1">클래스 선택자 적용</p>
+    <p class="c1s">클래스 선택자 적용</p>
+
+    <p class="id1">ID 선택자 적용</p>
+
+    <!-- 외부 스타일 적용 -->
+    <h3 id="external">외부 스타일 적용</h3>
+</body>
+</html>
