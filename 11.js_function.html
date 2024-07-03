@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js function</title>
+
+    <script>
+        function basicFunction(){
+            console.log("hello world");
+        }
+
+        // 함수를 변수에 담음
+        const variableFunction1 = function(){
+            console.log("hello world variableFunction");
+        }
+        
+        const variableFunction2 = ()=>{
+            console.log("hello world variableFunction");
+        }
+
+        // 실행문이 한줄일 경우 중괄호 생략가능하다.
+        // const variableFunction22 = ()=> console.log("hello world variableFunction");
+        
+        const makeString1 = () => {return "hello world"};
+        const makeString2 = () => "hello world";
+
+        function returnFunction1(){
+            console.log(makeString1())
+            console.log(makeString2())
+        }
+
+        function paramFunction1(a,b){
+            let total = a+b;
+            console.log(total);
+        }
+        
+    </script>
+</head>
+<body>
+    <h2>js 기본 함수 호출</h2>
+    <button onclick="basicFunction()">함수 호출 basic</button>
+    <button onclick="variableFunction1()">변수 함수 호출1</button>
+    <button onclick="variableFunction2()">변수 함수 호출2</button>
+    <button onclick="returnFunction1()">리턴 함수 호출2</button>
+    <button onclick="paramFunction1(1,'hongildong')">매개변수 있는 함수 호출1</button>
+</body>
+</html>

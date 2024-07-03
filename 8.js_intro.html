@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js intro</title>
+    <script>
+        function variableConsole1(){
+            console.log("hello world");
+            // var, let, const 셋 중에 하나 키워드를 사용
+            var a = 10;
+            var b = "10";
+            var c = 20;
+            console.log(a+b);
+            console.log(a+c);
+        }
+
+        function variableConsole2(){
+            // var arr = [10,"20",30,'40']; // 배열에 다양한 타입 들어갈 수 있다.
+            // arr.push(50);
+            // for(var i=0; i<arr.length; i++){
+            //     console.log(arr[i]);
+            // }
+            // arr.forEach(a=>console.log(a));
+
+            // arr2를 선언해서 10,20,30,40을 배열에 담고 총합 구하기
+            var arr2 = [10,20,30,40];
+            var total = 0;
+            for(var i=0; i<arr2.length; i++){
+                total += arr2[i];
+            }
+            console.log(total);
+            // alert : 팝업창으로 출력, 확인버튼 누르기 전 까지는 이후 코드 실행X, 화면상에서도 조작 불가
+            alert("total : " +total);
+            // document.write() : 화면상에 출력해버림, 쓰는 것을 지양
+            document.write("total : " +total);
+        }
+
+        function variableConsole3(){
+            // arr 배열에 10,20 넣고, 함수(test-hello world출력) 넣기
+            // arr[2]();
+            var arr = [10,20, function test(){console.log("hello world")}];
+            arr[2]();
+        }
+
+        function varExample(){
+            // var는 같은 변수명에 재선언과 재할당 가능
+            var a = 10;
+            var a = 20; // 재선언 가능
+            a = 20; // 재할당 가능
+            console.log(a);
+        }
+
+        function letExample(){
+            // let은 같은 변수명에 재할당만 가능(재선언 불가)
+            let a = 10;
+            // let a = 10; // 재선언 불가
+            a = 20; // 재할당 가능
+        }
+
+        function constExample(){
+            // const는 재선언, 재할당 불가능
+            const a = 10;
+            // a = 20; // 재할당 불가
+            console.log(a); 
+        }
+
+        function changTextById(){
+            // 어떤 id의 요소값을 가져오겠다.
+            // (전체 document 중 id는 유일한 값이기 때문에 Element -> 하나만 가져옴)
+            document.getElementById("change1").innerHTML = "변경완료";
+            document.getElementById("change1").style.fontSize = "20px"; 
+        }
+
+        function changTextByClass(){
+            // 어떤 class의 요소값을 가져오겠다.
+            let arr = document.getElementsByClassName("change2");
+            for(let i=0; i<arr.length; i++){
+                arr[i].innerHTML = "변경완료";
+                arr[i].style.fontSize = "20px";
+                arr[i].style.color="red";
+            }
+        }
+
+        function changeTextByTag(){
+            // tag의 요소값을 가져오겠다.
+            let arr = document.getElementsByTagName("h3");
+            for(let i=0; i<arr.length; i++){
+                arr[i].innerHTML = "변경완료";
+                arr[i].style.fontSize = "20px";
+                arr[i].style.color="red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>javascript 변수와 출력</h2>
+    <button onclick="variableConsole1()">consol에 변수 출력하기1</button>
+    <button onclick="variableConsole2()">consol에 변수 출력하기2</button>
+    <button onclick="variableConsole3()">consol에 변수 출력하기3</button>
+
+    <h2>javascript 변수 선언 키워드</h2>
+    <button onclick="varExample()">var 예제</button>
+    <button onclick="letExample()">let 예제</button>
+    <button onclick="constExample()">const 예제</button>
+
+    <h2>tag선택, class선택, id선택</h2>
+    <button onclick="changTextById()">id선택 후 change</button>
+    <p id="change1">id 선택 후 변경대상</p>
+
+    <!-- p 태그 2개 만들어서 변경대상 클래스 지정 후 
+        함수에서 해당 class get 하여 변경완료로 변경해주고
+        fontsize 20, fontcolor는 red -->
+
+    <button onclick="changTextByClass()">class선택 후 change</button>
+    <p class="change2">class 선택 후 변경대상</p>
+    <p class="change2">class 선택 후 변경대상</p>
+
+    <!-- h3 태그 2개 만들어서 변경대상 get
+        함수에서 해당 TAG get하여 변경완료로 변경해주고,
+        fontsize 20, color는 red -->
+
+    <button onclick="changeTextByTag()">tag 선택 후 change</button>
+    <h3>tag 선택 후 변경대상1</h3>
+    <h3>tag 선택 후 변경대상2</h3>
+    
+</body>
+</html>
