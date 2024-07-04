@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js callback</title>
+</head>
+<body>
+    <h2>콜백함수</h2>
+    <button onclick="basicFunction()">일반함수 예제1</button>
+    <button onclick="callBackFunction1()">콜백함수 예제1</button>
+    <button onclick="callBackFunction2()">콜백함수 예제2</button>
+    <button onclick="callBackFunction3()">콜백함수 예제3</button>
+
+    <script>
+        function basicFunction(){
+            alert("hello world");
+        }
+
+        // 콜백함수 : 매개변수로 함수를 받는 함수
+        function callBackFunction1(){
+            userInput((a)=>{alert(a+"님 안녕하세요")});
+        }
+
+        function callBackFunction2(){
+            const numbers = [1,2,3,4,5];
+            // callback함수의 일종
+            numbers.forEach((a)=>console.log(a));
+            // 기본적으로 javascript는 동기적으로 실행
+            console.log("hello world");
+        }
+
+        function callBackFunction3(){
+            // setTimeOut 함수는 대표적인 js의 비동기함수 중 하나(+콜백함수처럼 타임아웃)
+            // 2초 뒤에 콜백함수 실행하라는 뜻
+            setTimeout(() => console.log("hello world1"), 2000);
+            console.log("hello world2");
+            setTimeout(() => console.log("hello world3"), 2000);
+            console.log("hello world4");
+            // hello world2 -> hello world4 -> hello world1 -> hello world3순 출력
+        }
+
+        // 콜백지옥
+        // 비동기 함수 내에서 처리결과 값을 받아 다시 처리하고 그 처리결과값을 받아
+        // 다시 처리해야 하는 연쇄적인 작업
+
+        function userInput(callback){
+            const name = "hongildong";
+            callback(name);
+        }
+    
+    </script>
+</body>
+</html>

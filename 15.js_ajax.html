@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js ajax</title>
+    <script>
+        // 콜백지옥
+        // 비동기 함수 내에서 처리결과 값을 받아 다시 처리하고 그 처리결과값을 받아
+        // 다시 처리해야 하는 연쇄적인 작업
+    </script>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        // $(document).ready() : DOM 객체가 완전히 로드된 이후에 코드 실행한다.
+        $(document).ready(function(){
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/posts/1",
+                type: 'GET',
+                dataType: 'json',
+                success: function(a){
+                    console.log(a);
+                },
+                error: function(){
+
+                }
+            })
+        })
+        console.log("hello world");
+    </script>
+    
+</body>
+</html>

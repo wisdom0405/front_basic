@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 직렬화 및 역직렬화 실습</title>
+</head>
+<body>
+    <div>
+    <table border ="1" style="border-collapse: collapse; margin:auto;" >
+        <thead>
+            <tr><th>name</th><th>age</th><th>score</th></tr>
+        </thead>
+        <tbody id="data">
+            <tr><td id="name"></td><td id="age"></td><td id="score"></td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <!-- <div>
+    <table id="obj2Table" border ="1" style="border-collapse: collapse; margin:auto;">
+        <tr><th>name</th><th>age</th><th>score</th></tr>
+        <tr><td id="name"></td><td id="age"></td><td id="score"></td></tr>
+    </table>
+    </div> -->
+    
+    <script>
+        // 단일객체
+        const jsonTxt1 = '{"name":"Alice","age":25,"score":85}'
+        // 객체배열
+        const jsonTxt2 = '[{"name":"Alice","age":25,"score":85},{"name":"Bob","age":28,"score":92},{"name":"Charlie","age":32,"score":88}]';
+        
+        // json 역직렬화(파싱) : json -> 객체
+        // 직렬화 : 객체 -> json
+        const obj1 = JSON.parse(jsonTxt1);
+        document.getElementById("name").innerHTML = obj1.name;
+        document.getElementById("age").innerHTML = obj1.age;
+        document.getElementById("score").innerHTML = obj1.score;
+
+        const obj2 = JSON.parse(jsonTxt2);
+
+        console.log(obj2);
+        // console.log(obj2[1]);
+
+        let tbodyData = document.getElementById("data");
+        obj2.forEach(element =>
+            tbodyData.innerHTML += `<tr><td>${element.name}</td><td>${element.age}</td><td>${element.score}</td><tr>`
+        )
+
+        // for(let i=0; i<obj2.length; i++){
+        //     let obj = document.getElementById("data");
+        //     obj.innerHTML += `<tr><td>${obj2[i].name}</td><td>${obj2[i].age}</td><td>${obj2[i].score}</td></tr>`;
+        // }
+
+        // 직렬화 
+        const jsonTxt3 = JSON.stringify(obj2);
+        console.log(jsonTxt3);
+    </script>
+</body>
+</html>
