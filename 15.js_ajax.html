@@ -13,20 +13,23 @@
 <body>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
-        // $(document).ready() : DOM 객체가 완전히 로드된 이후에 코드 실행한다.
+        // $(document).ready() : DOM 객체가 완전히 완전히 로드되고 나서 코드를 실행하기 위한 jQuery 함수입니다. 
+        // 웹 페이지의 모든 요소가 준비된 후에 실행할 코드를 이 안에 넣습니다.
         $(document).ready(function(){
+            // ajax 요청
             $.ajax({
-                url: "https://jsonplaceholder.typicode.com/posts/1",
-                type: 'GET',
-                dataType: 'json',
-                success: function(a){
-                    console.log(a);
+                url: "https://jsonplaceholder.typicode.com/posts/1", // 요청을 보낼 url (jsonplaceholder : 가짜 온라인 rest api)
+                type: 'GET', // HTTP 요청 유형, 데이터를 가져오기 위해 GET
+                dataType: 'json', // json을 사용하여 JSON 형식의 데이터를 반환받음
+                success: function(a){ // 요청이 성공했을 때 실행될 콜백함수
+                    console.log(a); // 반환된 데이터가 a 변수에 저장되고, console.log(a)를 통해 브라우저의 콘솔에 출력
                 },
-                error: function(){
+                error: function(){ // 요청이 실패했을 때 실행될 콜백함수
 
                 }
             })
         })
+        // $(document).ready() 함수 바깥에 있으므로, 웹 페이지가 로드되기 전에 즉시 실행됩니다. 따라서 이 메시지는 AJAX 요청보다 먼저 콘솔에 출력
         console.log("hello world");
     </script>
     
