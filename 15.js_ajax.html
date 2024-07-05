@@ -15,6 +15,7 @@
     <script>
         // $(document).ready() : DOM 객체가 완전히 완전히 로드되고 나서 코드를 실행하기 위한 jQuery 함수입니다. 
         // 웹 페이지의 모든 요소가 준비된 후에 실행할 코드를 이 안에 넣습니다.
+        // 비동기적으로 코드 처리
         $(document).ready(function(){
             // ajax 요청
             $.ajax({
@@ -28,7 +29,7 @@
 
                 }
             })
-        })
+        });
         // $(document).ready() 함수 바깥에 있으므로, 웹 페이지가 로드되기 전에 즉시 실행됩니다. 따라서 이 메시지는 AJAX 요청보다 먼저 콘솔에 출력
         console.log("hello world");
     </script>
