@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <object style="width:100%" data="header.html" type="text/html"></object>
+    <!-- container : 부스트랩의 컨테이너 클래스는 페이지의 내용을 
+        중앙에 정렬하고 양쪽에 패딩을 추가하고 내용을 감싸는 역할 -->
+    <div class="container">
+        <div class="page-header"><h3>게시글 목록</h3></div>
+        <!-- btn-primary, btn-secondary 등 여러 버튼 제공 -->
+        <div class="float-end">
+        <button class="btn btn-primary">글쓰기</button> 
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>contetns</th>
+                </tr>
+            </thead>
+            <tbody id="list">
+                <!-- 리스트 내용 -->
+            </tbody>
+        </table>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    async function DataToList(){
+        try{
+            const response = await axios.get("http://localhost:8081/post/list");
+            // console.log(response.data);
+            const resData = response.data
+            resData.forEach(element =>
+                document.getElementById("list").innerHTML += `<td>${element.id}</td>
+                                                            <td>${element.title}</td>
+                                                            <td>${element.contents}</td> <br>`
+        ) 
+        }
+        catch(e){
+            cosole.log(e.message);
+        }
+          
+    }
+    DataToList();
+</script>
+</body>
+</html>

@@ -8,7 +8,6 @@
 
 </head>
 <body>
-   
     <object style="width:100%" data="header.html" type="text/html"></object>
     <div class="container">
         <div class="page-header"><h3>게시글 상세조회</h3></div>
@@ -16,10 +15,9 @@
         <button class="btn btn-primary" onclick="serverData()">조회</button> 
 
         <table class="table">
-           <tr><td>userId</td><td id="userId"></td></tr>
            <tr><td>id</td><td id="id"></td></tr>
            <tr><td>title</td><td id="title"></td></tr>
-           <tr><td>body</td><td id="body"></td></tr>
+           <tr><td>contents</td><td id="contents"></td></tr>
         </table>
 </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -27,14 +25,12 @@
         async function serverData(){
             const postId = document.getElementById("postId").value;
             // console.log(postId);
-            const response = await axios.get("https://jsonplaceholder.typicode.com/posts/"+postId);
+            const response = await axios.get("http://localhost:8081/post/detail/"+postId);
             // console.log(response.data);
-            document.getElementById("userId").innerHTML = response.data.userId;
             document.getElementById("id").innerHTML = response.data.id;
             document.getElementById("title").innerHTML = response.data.title;
-            document.getElementById("body").innerHTML = response.data.body;
+            document.getElementById("contents").innerHTML = response.data.contents;
         }
-
     </script>
 </body>
 </html>
